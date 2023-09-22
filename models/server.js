@@ -2,7 +2,7 @@
 const express = require('express');
 
 //Servidor de sockets
-const http = require('http');
+const { createServer } = require('http');
 
 //Configuración del socket server
 const socketio = require('socket.io');
@@ -18,7 +18,7 @@ class Server {
     this.port = process.env.PORT;
 
     //Http server
-    this.server = http.createServer(this.app);
+    this.server = createServer(this.app);
 
     //Config sockets
     this.io = socketio(this.server, {
