@@ -25,9 +25,11 @@ class Server {
       /* config */
     });
   }
-  //Desplegar el directorio public
   middlewares() {
+    //Desplegar el directorio public
     this.app.use(express.static(path.resolve(__dirname, '../public')));
+
+    //CORS
     this.app.use(cors());
   }
 
