@@ -22,7 +22,10 @@ class Server {
 
     //Config sockets
     this.io = socketio(this.server, {
-      /* config */
+      cors: {
+        origin: '*',
+        methods: ['GET', 'POST'],
+      },
     });
   }
   middlewares() {
