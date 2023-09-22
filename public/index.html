@@ -44,7 +44,9 @@
     ></script>
 
     <script>
-      const socket = io('https://socket-server-basic-nfq3.onrender.com');
+      const socket = io('https://socket-server-basic-nfq3.onrender.com', {
+        transports: ['websocket'],
+      });
 
       //Referencia a los elementos del DOM
       const formulario = document.querySelector('#miFormulario');
